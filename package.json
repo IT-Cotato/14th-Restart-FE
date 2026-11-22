@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "prepare": "husky",
     "test": "vitest",
-    "test:run": "vitest run --passWithNoTests"
+    "test:run": "vitest run --passWithNoTests",
+    "check": "pnpm lint && pnpm format:check && pnpm test:run && pnpm build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
