@@ -1,0 +1,7 @@
+dist
+node_modules
+pnpm-lock.yaml
+public/mockServiceWorker.js
+
+.github/ISSUE_TEMPLATE/
+.github/pull_request_template.md
