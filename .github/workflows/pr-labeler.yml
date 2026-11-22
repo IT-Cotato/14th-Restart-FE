@@ -1,49 +1,49 @@
 name: PR Labeler
 
 on:
-    pull_request:
-        types: [opened, edited, reopened]
+  pull_request:
+    types: [opened, edited, reopened]
 
 permissions:
-    pull-requests: write
-    issues: write
+  pull-requests: write
+  issues: write
 
 jobs:
-    addLabel:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/github-script@v7
-              with:
-                  script: |
-                      const LABEL_NAMES = [
-                        'feat',
-                        'fix',
-                        'refactor',
-                        'test',
-                        'docs',
-                        'style',
-                        'chore',
-                        'ci',
-                        'perf',
-                        'hotfix',
-                      ];
+  addLabel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const LABEL_NAMES = [
+              'feat',
+              'fix',
+              'refactor',
+              'test',
+              'docs',
+              'style',
+              'chore',
+              'ci',
+              'perf',
+              'hotfix',
+            ];
 
-                      const pullRequest = context.payload.pull_request;
-                      const matchResult = pullRequest.title.match(/^(\w+)(\(.+\))?!?:/);
+            const pullRequest = context.payload.pull_request;
+            const matchResult = pullRequest.title.match(/^(\w+)(\(.+\))?!?:/);
 
-                      if (!matchResult) {
-                        return;
-                      }
+            if (!matchResult) {
+              return;
+            }
 
-                      const labelName = matchResult[1].toLowerCase();
+            const labelName = matchResult[1].toLowerCase();
 
-                      if (!LABEL_NAMES.includes(labelName)) {
-                        return;
-                      }
+            if (!LABEL_NAMES.includes(labelName)) {
+              return;
+            }
 
-                      await github.rest.issues.addLabels({
-                        owner: context.repo.owner,
-                        repo: context.repo.repo,
-                        issue_number: pullRequest.number,
-                        labels: [labelName],
-                      });
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequest.number,
+              labels: [labelName],
+            });
