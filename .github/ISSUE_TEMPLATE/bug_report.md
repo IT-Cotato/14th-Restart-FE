@@ -1,3 +1,10 @@
+---
+name: Bug Report
+about: 동작 오류, 화면 깨짐 등 버그 제보
+title: '[Bug] '
+labels: fix
+---
+
 ## 버그 설명
 
 ## 재현 방법

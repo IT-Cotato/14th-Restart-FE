@@ -1,3 +1,10 @@
+---
+name: Refactor
+about: 동작 변경 없이 코드 구조 개선
+title: '[Refactor] '
+labels: refactor
+---
+
 ## 작업 배경
 <!-- 왜 리팩터링이 필요한지 (중복, 가독성, 유지보수 문제 등) -->
 

@@ -1,3 +1,10 @@
+---
+name: Feature Request
+about: 새 기능 개발 또는 기존 기능 개선
+title: '[Feat] '
+labels: feat
+---
+
 ## 기능 설명
 <!-- 무엇을, 왜 만드는지 -->
 
