@@ -17,19 +17,21 @@ reviews:
     - '!dist/**'
     - '!public/mockServiceWorker.js'
 
-  instructions: |
-    - ESLint/Prettier가 이미 잡는 이슈(파일/폴더 네이밍, I 접두어, enum 사용,
-      console, non-null assertion, axios 직접 import, new Date)는 지적하지 않는다.
-    - 로직 버그, 예외 처리 누락, 접근성, 불필요한 리렌더링, 타입 안전성 위주로 본다.
-    - 사소한 취향 차이는 코멘트하지 않는다.
-    - 아래 컨벤션 중 린트로 못 잡는 항목(함수명, boolean, ID, 핸들러, Props 타입 등)을 확인한다.
-      * 함수는 동사로 시작 (findProgramsByRegion)
-      * 이벤트 핸들러는 handle{이름}, props 콜백은 on{이름}
-      * boolean 내부 상태는 is/has/can 접두어 허용, API 응답 필드는 BE 이름 그대로
-      * ID 필드는 BE와 동일하게 {리소스 전체 이름}Id (supportProgramId), 줄이지 않음
-      * 타입 기본은 type, Props 타입은 {컴포넌트}Props
-      * 에러 코드/enum 값은 BE 문자열과 동일하게 as const 객체 + union 타입
-
+  path_instructions:
+    - path: '**'
+      instructions: |
+        - ESLint/Prettier가 이미 잡는 이슈(파일/폴더 네이밍, I 접두어, enum 사용,
+          console, non-null assertion, axios 직접 import, new Date)는 지적하지 않는다.
+        - 로직 버그, 예외 처리 누락, 접근성, 불필요한 리렌더링, 타입 안전성 위주로 본다.
+        - 사소한 취향 차이는 코멘트하지 않는다.
+        - 아래 컨벤션 중 린트로 못 잡는 항목(함수명, boolean, ID, 핸들러, Props 타입 등)을 확인한다.
+          * 함수는 동사로 시작 (findProgramsByRegion)
+          * 이벤트 핸들러는 handle{이름}, props 콜백은 on{이름}
+          * boolean 내부 상태는 is/has/can 접두어 허용, API 응답 필드는 BE 이름 그대로
+          * ID 필드는 BE와 동일하게 {리소스 전체 이름}Id (supportProgramId), 줄이지 않음
+          * 타입 기본은 type, Props 타입은 {컴포넌트}Props
+          * 에러 코드/enum 값은 BE 문자열과 동일하게 as const 객체 + union 타입
+    - path: 'src/api/**'
   path_instructions:
     - path: 'src/api/**'
       instructions: |
