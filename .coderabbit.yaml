@@ -31,7 +31,6 @@ reviews:
           * ID 필드는 BE와 동일하게 {리소스 전체 이름}Id (supportProgramId), 줄이지 않음
           * 타입 기본은 type, Props 타입은 {컴포넌트}Props
           * 에러 코드/enum 값은 BE 문자열과 동일하게 as const 객체 + union 타입
-    - path: 'src/api/**'
   path_instructions:
     - path: 'src/api/**'
       instructions: |
