@@ -16,10 +16,14 @@ if (!rootElement) {
   throw new Error('root 요소를 찾을 수 없습니다.');
 }
 
-enableMocking().then(() => {
-  createRoot(rootElement).render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  );
-});
+enableMocking()
+  .catch((error: unknown) => {
+    console.error('[MSW] 목 서버를 시작하지 못했습니다.', error);
+  })
+  .then(() => {
+    createRoot(rootElement).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    );
+  });
