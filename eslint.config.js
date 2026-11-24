@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from 'eslint-plugin-storybook';
+
 import checkFile from 'eslint-plugin-check-file';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import js from '@eslint/js';
@@ -8,7 +11,7 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist', 'public/mockServiceWorker.js']),
+  globalIgnores(['dist', 'public/mockServiceWorker.js', 'storybook-static']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -66,7 +69,7 @@ export default defineConfig([
           // 훅: use 접두어 + camelCase (useBookmark.ts)
           'src/hooks/**/*.ts': 'use[A-Z]*([A-Za-z0-9])',
           // Zustand store: {이름}Store.ts (authStore.ts)
-          'src/store/**/*.ts': '[a-z]*([A-Za-z0-9])Store',
+          'src/stores/**/*.ts': '[a-z]*([A-Za-z0-9])Store',
           // 그 외: camelCase
           'src/{api,constants,mock,types,utils}/**/*.ts': 'CAMEL_CASE',
         },
@@ -104,4 +107,5 @@ export default defineConfig([
       ],
     },
   },
+  ...storybook.configs['flat/recommended'],
 ]);

@@ -14,7 +14,9 @@
     "test": "vitest",
     "test:run": "vitest run --passWithNoTests",
     "typecheck": "tsc -b",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:run && pnpm build"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:run && pnpm build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
@@ -30,7 +32,12 @@
     "zustand": "^5.1.0"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "latest",
     "@eslint/js": "^10.0.1",
+    "@storybook/addon-a11y": "^10.6.8",
+    "@storybook/addon-docs": "^10.6.8",
+    "@storybook/addon-onboarding": "^10.6.8",
+    "@storybook/react-vite": "^10.6.8",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^8.0.0",
     "@testing-library/react": "^16.3.3",
@@ -39,11 +46,13 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "5.1.1",
     "eslint": "^10.14.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-check-file": "^3.3.2",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.7",
+    "eslint-plugin-storybook": "^10.6.8",
     "globals": "^17.13.0",
     "husky": "^9.1.7",
     "jsdom": "^31.0.1",
@@ -51,6 +60,7 @@
     "msw": "^3.0.7",
     "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "storybook": "^10.6.8",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",
