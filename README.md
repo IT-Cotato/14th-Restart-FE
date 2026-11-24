@@ -49,7 +49,7 @@ src/
 ├── hooks/        # 커스텀 훅 (서버 데이터 조회 훅 포함)
 ├── mock/         # MSW 핸들러, 목 데이터
 ├── pages/        # 라우트 단위 화면
-├── router/       # 라우터 설정 (경로-페이지 연결)
+├── router/       # 라우터 설정 (경로-페이지 연결, 보호 라우트)
 ├── stores/       # Zustand store
 ├── styles/       # 전역 스타일, 테마
 ├── types/        # 타입 정의
