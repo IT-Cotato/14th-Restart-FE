@@ -69,7 +69,7 @@ export default defineConfig([
           // 훅: use 접두어 + camelCase (useBookmark.ts)
           'src/hooks/**/*.ts': 'use[A-Z]*([A-Za-z0-9])',
           // Zustand store: {이름}Store.ts (authStore.ts)
-          'src/store/**/*.ts': '[a-z]*([A-Za-z0-9])Store',
+          'src/stores/**/*.ts': '[a-z]*([A-Za-z0-9])Store',
           // 그 외: camelCase
           'src/{api,constants,mock,types,utils}/**/*.ts': 'CAMEL_CASE',
         },
