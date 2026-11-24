@@ -14,7 +14,9 @@
     "test": "vitest",
     "test:run": "vitest run --passWithNoTests",
     "typecheck": "tsc -b",
-    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:run && pnpm build"
+    "check": "pnpm typecheck && pnpm lint && pnpm format:check && pnpm test:run && pnpm build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.5",
@@ -54,7 +56,18 @@
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",
-    "vitest": "^5.1.1"
+    "vitest": "^5.1.1",
+    "storybook": "^10.6.8",
+    "@storybook/react-vite": "^10.6.8",
+    "@chromatic-com/storybook": "latest",
+    "@storybook/addon-vitest": "^10.6.8",
+    "@storybook/addon-a11y": "^10.6.8",
+    "@storybook/addon-docs": "^10.6.8",
+    "@storybook/addon-onboarding": "^10.6.8",
+    "eslint-plugin-storybook": "^10.6.8",
+    "@vitest/browser-playwright": "5.1.1",
+    "@vitest/coverage-v8": "5.1.1",
+    "playwright": "latest"
   },
   "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0",
   "msw": {
